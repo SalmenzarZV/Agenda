@@ -180,11 +180,11 @@ public class MainActivity extends AppCompatActivity {
 
 */
 
-
+        tvResult.setText("");
         Uri uri2 = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
         String proyeccion2[] = new String[] {ContactsContract.CommonDataKinds.Phone.NUMBER, ContactsContract.Contacts.DISPLAY_NAME};
         String seleccion2 =ContactsContract.CommonDataKinds.Phone.NUMBER + " like ?";                    // ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?";
-        String argumentos2[] = new String[]{etPhone.getText().toString()};                //new String[]{id+""};
+        String argumentos2[] = new String[]{etPhone.getText().toString()+"%"};                //new String[]{id+""};
         String orden2 = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME;
         Cursor cursor2 = getContentResolver().query(uri2, proyeccion2, seleccion2, argumentos2, orden2);
         String[] columnas2 = cursor2.getColumnNames();
@@ -201,14 +201,16 @@ public class MainActivity extends AppCompatActivity {
             nombre = cursor2.getString(columnaNombre);
             numero = cursor2.getString(columnaNumero);
             //Log.v(TAG, c)
-
-
+            tvResult.append("nombre: "+nombre+"\n numero: "+numero+"\n\n");
+    /*
             for (String c : columnas2){
                 int pos = cursor2.getColumnIndex(c);
                 String valor = cursor2.getString(pos);
                 Log.v(TAG ,pos + " " + c +" " + valor);
-                tvResult.append("nombre: "+nombre+" numero: "+numero+"\n");
+                tvResult.append(valor+"\n");
             }
+
+     */
         }
 
     }
