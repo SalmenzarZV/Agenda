@@ -2,10 +2,10 @@
     <string name="app_name">Agenda</string>
     <string name="hint_phone">Introduce the phone number</string>
     <string name="button_search">Search</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="title">Read Contacts Permission Required</string>
-    <string name="message">Rationale Explanation ...</string>
+    <string name="message">We need Contacts permission, we can´t provide your contacts without it.</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <string name="action_settings">Settings</string>
